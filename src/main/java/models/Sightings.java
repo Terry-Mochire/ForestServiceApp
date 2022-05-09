@@ -9,10 +9,13 @@ public class Sightings {
 
     private int animalId;
 
-    public Sightings(String rangerName, String location, int animalId){
+    private String animalName;
+
+    public Sightings(String rangerName, String location, int animalId, String animalName){
         this.rangerName = rangerName;
         this.location = location;
         this.animalId = animalId;
+        this.animalName = animalName;
     }
 
     public String getRangerName() {

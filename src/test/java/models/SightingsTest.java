@@ -16,7 +16,7 @@ class SightingsTest {
     void tearDown() {
     }
     public Sightings setUpNewSightings(){
-        return new Sightings("Brad", "Near the River", 1);
+        return new Sightings("Brad", "Near the River", 1, "Lion");
     }
 
     @Test
