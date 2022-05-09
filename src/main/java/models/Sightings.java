@@ -2,15 +2,17 @@ package models;
 
 public class Sightings {
 
-    private int id;
 
     private String location;
 
     private String rangerName;
 
-    public Sightings(String rangerName, String location){
+    private int animalId;
+
+    public Sightings(String rangerName, String location, int animalId){
         this.rangerName = rangerName;
         this.location = location;
+        this.animalId = animalId;
     }
 
     public String getRangerName() {
@@ -21,7 +23,7 @@ public class Sightings {
         return location;
     }
 
-    public int getId() {
-        return id;
+    public int getAnimalId() {
+        return animalId;
     }
 }

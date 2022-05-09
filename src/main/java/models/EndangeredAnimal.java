@@ -1,11 +1,11 @@
 package models;
 
-public class EndangeredAnimals extends Animals{
+public class EndangeredAnimal extends Animal{
 
     private String health;
     private String age;
 
-    public EndangeredAnimals(String name, int id, String health, String age) {
+    public EndangeredAnimal(String name, int id, String health, String age) {
         super(name, id);
         this.health = health;
         this.age = age;
