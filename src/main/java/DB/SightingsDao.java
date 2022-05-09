@@ -1,11 +1,10 @@
 package DB;
 
-import models.Animal;
-import models.EndangeredAnimal;
+import models.Sightings;
 
 import java.util.List;
 
-public class EndangeredAnimalDao implements EndangeredAnimalDaoInterface{
+public class SightingsDao implements SightingsDaoInterface{
     @Override
     public void add() {
 
@@ -22,7 +21,7 @@ public class EndangeredAnimalDao implements EndangeredAnimalDaoInterface{
     }
 
     @Override
-    public List<EndangeredAnimal> getAll() {
+    public List<Sightings> getAll() {
         return null;
     }
 

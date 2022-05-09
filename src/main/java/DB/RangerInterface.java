@@ -1,6 +1,7 @@
 package DB;
 
 import models.Animal;
+import models.Ranger;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface RangerInterface {
     void update();
 
     //LIST
-    List<Animal> getAll();
+    List<Ranger> getAll();
 
     //DELETE
     void deleteById();

@@ -1,11 +1,11 @@
 package DB;
 
-import models.Animal;
-import models.EndangeredAnimal;
+import models.Ranger;
+import models.Sightings;
 
 import java.util.List;
 
-public interface EndangeredAnimalDaoInterface {
+public interface SightingsDaoInterface {
     //CREATE
     void add();
 
@@ -16,7 +16,7 @@ public interface EndangeredAnimalDaoInterface {
     void update();
 
     //LIST
-    List<EndangeredAnimal> getAll();
+    List<Sightings> getAll();
 
     //DELETE
     void deleteById();

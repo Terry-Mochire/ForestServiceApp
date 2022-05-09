@@ -1,6 +1,7 @@
 package DB;
 
 import models.Animal;
+import models.Ranger;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class RangerDao implements RangerInterface{
     }
 
     @Override
-    public List<Animal> getAll() {
+    public List<Ranger> getAll() {
         return null;
     }
 
