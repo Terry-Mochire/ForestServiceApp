@@ -1,9 +1,10 @@
 package DB;
+
 import models.Animal;
 
 import java.util.List;
 
-public interface AnimalDaoInterface {
+public interface EndangeredAnimalDaoInterface {
     //CREATE
     void add();
 
@@ -19,7 +20,4 @@ public interface AnimalDaoInterface {
     //DELETE
     void deleteById();
     void clearAllAnimals();
-
-
-
 }

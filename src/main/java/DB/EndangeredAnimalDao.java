@@ -4,7 +4,7 @@ import models.Animal;
 
 import java.util.List;
 
-public class AnimalDao implements AnimalDaoInterface{
+public class EndangeredAnimalDao implements EndangeredAnimalDaoInterface{
     @Override
     public void add() {
 
