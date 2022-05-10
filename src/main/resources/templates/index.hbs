@@ -1,0 +1,53 @@
+{{> layout.hbs}}
+<div class="container-fluid">
+    <div class="row" id="body-section">
+        <div class="col-md-6 img-hero">
+        </div>
+        <div class="col-md-6 form-container">
+            <form action="/animals/new" method="post">
+                <div class="form-group">
+                    <label for="animal" >Animal </label>
+                    <input name="animal" type="text" id="animal" class="form-control" placeholder="Name Of Animal..." required>
+                </div>
+                <div class="form-group">
+                    <label for="danger">Animal status:</label>
+                    <select name="danger" id="danger" class="form-control" required>
+                        <option value="endangered">Endangered</option>
+                        <option value="not-endangered">Not Endangered</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="health">Animal health: </label>
+                    <select name="health" id="health" class="form-control" required>
+                        <option value="healthy">Healthy</option>
+                        <option value="ill">Ill</option>
+                        <option value="okay">Okay</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Animal Age: </label>
+                    <select name="age" id="age" class="form-control" required>
+                        <option value="newborn">Newborn</option>
+                        <option value="young">Young</option>
+                        <option value="adult">Adult</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Located: </label>
+                    <select name="location" id="location" class="form-control" required>
+                        <option value="zone-a">Zone A(Samburu)</option>
+                        <option value="zone-b">Zone B(Mara)</option>
+                        <option value="zone-c">Zone C(Amboseli)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ranger">Ranger name: </label>
+                    <input name="ranger" type="text" id="ranger" class="form-control" placeholder="Name Of Ranger..." required>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
