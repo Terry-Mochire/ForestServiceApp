@@ -1,24 +1,23 @@
-package DB;
+
 
 import org.junit.rules.ExternalResource;
-import org.sql2o.*;
+import org.sql2o.Sql2o;
+import org.sql2o.Connection;
 
 public class DatabaseRule extends ExternalResource {
 
     @Override
-    protected void before() {
+    public void before() {
         DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "", "");  //Those with linux or windows use two strings for username and password
     }
 
     @Override
-    protected void after() {
+    public void after() {
         try(Connection con = DB.sql2o.open()) {
             String deleteAnimalsQuery = "DELETE FROM animals *;";
-            String deleteSightingsQuery = "DELETE FROM animals *;";
-            String deleteRangersQuery = "DELETE FROM animals *;";
+            String deleteSightingsQuery = "DELETE FROM sightings *;";
             con.createQuery(deleteAnimalsQuery).executeUpdate();
             con.createQuery(deleteSightingsQuery).executeUpdate();
-            con.createQuery(deleteRangersQuery).executeUpdate();
         }
     }
 

@@ -1,6 +1,7 @@
+import java.util.List;
 import java.util.Objects;
 
-public class EndangeredAnimal{
+public class EndangeredAnimal implements DatabaseManagement{
     private int id;
 
     private String name;
@@ -60,6 +61,20 @@ public class EndangeredAnimal{
                     this.getId() == newEndangeredAnimal.getId();
         }
     }
+
+    @Override
+    public void save() {
+
+    }
+
+//    public static EndangeredAnimal find(int id) {
+//
+//    }
+
+
+//    public static List<EndangeredAnimal> all() {
+//
+//    }
 
     @Override
     public int hashCode() {
