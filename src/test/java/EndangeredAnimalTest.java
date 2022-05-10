@@ -1,4 +1,4 @@
-package models;
+
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +17,7 @@ class EndangeredAnimalTest {
     }
 
     public EndangeredAnimal setUpEndangeredAnimal(){
-        return new  EndangeredAnimal("White Rhino", 1, "healthy", "adult");
+        return new  EndangeredAnimal("White Rhino", "Endangered", "Healthy", "Young", "Near the river", "Brad" );
     }
 
     @Test
@@ -35,13 +35,13 @@ class EndangeredAnimalTest {
     @Test
     void newEndangeredAnimalInstantiatesWithCorrectHealth_true(){
         EndangeredAnimal testEndangeredAnimal = setUpEndangeredAnimal();
-        assertEquals("healthy", testEndangeredAnimal.getHealth());
+        assertEquals("Healthy", testEndangeredAnimal.getHealth());
     }
 
     @Test
     void newEndangeredAnimalInstantiatesWithCorrectAge_true(){
         EndangeredAnimal testEndangeredAnimal = setUpEndangeredAnimal();
-        assertEquals("adult", testEndangeredAnimal.getAge());
+        assertEquals("Young", testEndangeredAnimal.getAge());
     }
 
 }

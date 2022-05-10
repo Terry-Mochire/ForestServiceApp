@@ -1,5 +1,6 @@
-package models;
 
+
+import org.junit.Rule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 
 class AnimalTest {
+
+    @Rule
+    public DB.DatabaseRule database = new DB.DatabaseRule();
 
     @BeforeEach
     void setUp() {
@@ -17,7 +21,7 @@ class AnimalTest {
     }
 
     public Animal setUpNewAnimal(){
-        return new Animal("Tiger", 1);
+        return new Animal("Tiger");
     }
 
     @Test
@@ -35,6 +39,13 @@ class AnimalTest {
     @Test
     void newAnimalInstantiatesWithId_true() throws Exception {
         Animal testAnimal = setUpNewAnimal();
-        assertEquals(1, testAnimal.getId());
+        assertEquals(0, testAnimal.getId());
+    }
+
+    @Test
+    public void equals_returnsTrueIfNameAndIdAreEqual() {
+        Animal rex = new Animal("Rex");
+        Animal alpha= new Animal("Rex");
+        assertTrue(rex.equals(alpha));
     }
 }
