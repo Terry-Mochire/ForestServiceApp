@@ -1,0 +1,27 @@
+.landing {
+    background-image: url('/images/sutirta-budiman-Jgiv1rSIpVM-unsplash (1).jpg');
+    height: 100vh;
+    width: 100vw;
+}
+
+.form-container {
+    margin-top: 5%;
+    margin-right: 5;
+    padding: 2%;
+    background-color: white;
+    box-shadow: 5px 10px;
+
+}
+
+h1 {
+    text-align: center:
+}
+
+.description {
+    margin-top: 10%;
+}
+
+.btn {
+    margin: 2%;
+    border: 1px solid black;
+}

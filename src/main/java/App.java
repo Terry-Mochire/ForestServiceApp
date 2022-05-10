@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-
+        port(8080);
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");

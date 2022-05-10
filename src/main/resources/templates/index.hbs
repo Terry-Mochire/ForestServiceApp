@@ -1,9 +1,13 @@
 {{> layout.hbs}}
-<div class="container-fluid">
+<div class="container-fluid landing">
     <div class="row" id="body-section">
-        <div class="col-md-6 img-hero">
+        <div class="col-md-6 description">
+            <h1>WildLife Tracker</h1>
+            <p>The Forest Service is considering a proposal from a timber company to clear-cut the nearby Kenia forest of Douglas Fir. Before this proposal may be approved, they must complete an environmental impact study.</p>
+            <p id="heading">Let’s Track Our WildLife in order to save them from  extinction! </p>
         </div>
         <div class="col-md-6 form-container">
+            <h5>Add a new Sighting!</h5>
             <form action="/animals/new" method="post">
                 <div class="form-group">
                     <label for="animal" >Animal </label>
