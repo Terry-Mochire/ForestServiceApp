@@ -48,3 +48,8 @@ a:link {
     text-decoration: none;
     color: black;
 }
+
+#thanks {
+    margin-top: 30px;
+    margin-left: 20%;
+}
