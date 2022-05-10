@@ -1,7 +1,11 @@
 .landing {
-    background-image: url('/images/sutirta-budiman-Jgiv1rSIpVM-unsplash (1).jpg');
+    background-image: url('/images/sutirta-budiman-Jgiv1rSIpVM-unsplash.jpg');
     height: 100vh;
     width: 100vw;
+}
+
+.header {
+    background-color: #b2a44d;
 }
 
 .form-container {
@@ -24,4 +28,23 @@ h1 {
 .btn {
     margin: 2%;
     border: 1px solid black;
+}
+
+.success {
+     background-color: #ce5d28;
+}
+
+#animals{
+    border: 1px solid black;
+    background-color: white;
+    padding:5%;
+}
+
+#ranger {
+    float: right;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
 }
