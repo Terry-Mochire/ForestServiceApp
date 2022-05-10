@@ -14,6 +14,7 @@ class EndangeredAnimalTest {
 
     @AfterEach
     void tearDown() {
+        EndangeredAnimal.clearAll();
     }
 
     public EndangeredAnimal setUpEndangeredAnimal(){
@@ -42,6 +43,28 @@ class EndangeredAnimalTest {
     void newEndangeredAnimalInstantiatesWithCorrectAge_true(){
         EndangeredAnimal testEndangeredAnimal = setUpEndangeredAnimal();
         assertEquals("Young", testEndangeredAnimal.getAge());
+    }
+
+    @Test
+    public void equals_returnsIfNameAndAnimalAreTheSame_true(){
+        EndangeredAnimal testEndangeredAnimal = setUpEndangeredAnimal();
+        EndangeredAnimal testEndangeredAnimal2 = setUpEndangeredAnimal();
+        assertTrue(testEndangeredAnimal.equals(testEndangeredAnimal2));
+    }
+
+
+    @Test void save_correctlyStoresObjectIntoDatabase_true(){
+        EndangeredAnimal testEndangeredAnimal = setUpEndangeredAnimal();
+        testEndangeredAnimal.save();
+        assertTrue(EndangeredAnimal.all().get(0).equals(testEndangeredAnimal));
+    }
+
+    @Test
+    public void save_assignsIdToEndangeredAnimal() {
+        EndangeredAnimal unsavedBecky = new EndangeredAnimal("Becky", "Endangered", "Healthy", "Young", "Nairobi", "Becky");
+        unsavedBecky.save();
+        EndangeredAnimal savedBecky = EndangeredAnimal.find(unsavedBecky.getId());
+        assertEquals(savedBecky.getId(), unsavedBecky.getId());
     }
 
 }

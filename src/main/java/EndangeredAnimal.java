@@ -1,3 +1,6 @@
+import org.sql2o.Connection;
+import org.sql2o.Sql2oException;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -64,20 +67,59 @@ public class EndangeredAnimal implements DatabaseManagement{
 
     @Override
     public void save() {
-
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO animals (name, danger, health, age, location, ranger) VALUES (:name, :danger, :health, :age, :location, :ranger)";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("name", this.name)
+                    .addParameter("danger", this.danger)
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
+                    .addParameter("location", this.location)
+                    .addParameter("ranger", this.ranger)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
+    public static EndangeredAnimal find(int id) {
+        try(Connection con = DB.sql2o.open()) {
+            String sql =  "SELECT * FROM animals WHERE id= :id";
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(EndangeredAnimal.class);
+        }
     }
 
-//    public static EndangeredAnimal find(int id) {
-//
-//    }
 
+    public static List<EndangeredAnimal> all() {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM animals";
+            return con.createQuery(sql)
+                    .executeAndFetch(EndangeredAnimal.class);
+        }
 
-//    public static List<EndangeredAnimal> all() {
-//
-//    }
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+
+    public static void clearAll() {
+        String sql = "DELETE from animals *";
+        try (Connection con = DB.sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
+
+    public List<Sightings> getSightings() {
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM sightings WHERE animalId=:id";
+            return con.createQuery(sql)
+                    .addParameter("id", this.id)
+                    .executeAndFetch(Sightings.class);
+        }
     }
 }
